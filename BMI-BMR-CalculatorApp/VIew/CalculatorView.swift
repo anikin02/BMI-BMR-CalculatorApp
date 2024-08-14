@@ -49,6 +49,7 @@ struct CalculatorView: View {
           .clipShape(RoundedRectangle(cornerRadius: 12))
         }
         .padding(.horizontal, 25)
+        .padding(.top, 25)
         
         
         // MARK: Height
@@ -153,7 +154,7 @@ struct CalculatorView: View {
           .clipShape(RoundedRectangle(cornerRadius: 12))
         }
         .padding(.horizontal, 25)
-        .padding(.bottom, 30)
+        .padding(.bottom, 25)
         
         Button {
           
@@ -162,6 +163,7 @@ struct CalculatorView: View {
             .font(.system(size: 32, weight: .black))
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+            .padding(.top, 25)
             .background(Color("MAIN"))
 
         }
