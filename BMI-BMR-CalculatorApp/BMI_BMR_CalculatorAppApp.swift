@@ -2,7 +2,7 @@
 //  BMI_BMR_CalculatorAppApp.swift
 //  BMI-BMR-CalculatorApp
 //
-//  Created by Данил Аникин on 14.08.2024.
+//  Created by anikin02 on 14.08.2024.
 //
 
 import SwiftUI
