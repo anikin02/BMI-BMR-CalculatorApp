@@ -16,10 +16,11 @@ struct ContentView: View {
           Text("BMI/BMR Calculator")
             .foregroundStyle(.white)
             .font(.system(size: 20, weight: .black))
-            .frame(maxWidth: .infinity)
             .padding(.bottom, 10)
-            .background(Color("UPBGCOLOR"))
         }
+        .frame(maxWidth: .infinity)
+        .background(Color("UPBGCOLOR"))
+        
         Spacer()
         
         if calculatorViewModel.isShowResultView {
