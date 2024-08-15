@@ -13,6 +13,7 @@
 		78C996C42C6CDAB000F5B261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C996C32C6CDAB000F5B261 /* Preview Assets.xcassets */; };
 		78C996CC2C6CDB7100F5B261 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C996CB2C6CDB7100F5B261 /* CalculatorView.swift */; };
 		78C996CE2C6D934800F5B261 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C996CD2C6D934800F5B261 /* ResultView.swift */; };
+		78C996D12C6DAABE00F5B261 /* BMIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C996D02C6DAABE00F5B261 /* BMIModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		78C996C32C6CDAB000F5B261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78C996CB2C6CDB7100F5B261 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
 		78C996CD2C6D934800F5B261 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		78C996D02C6DAABE00F5B261 /* BMIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		78C996BB2C6CDAAE00F5B261 /* BMI-BMR-CalculatorApp */ = {
 			isa = PBXGroup;
 			children = (
+				78C996CF2C6DAAA800F5B261 /* Model */,
 				78C996CA2C6CDAF800F5B261 /* VIew */,
 				78C996BC2C6CDAAE00F5B261 /* BMI_BMR_CalculatorAppApp.swift */,
 				78C996C02C6CDAB000F5B261 /* Assets.xcassets */,
@@ -79,6 +82,14 @@
 				78C996CD2C6D934800F5B261 /* ResultView.swift */,
 			);
 			path = VIew;
+			sourceTree = "<group>";
+		};
+		78C996CF2C6DAAA800F5B261 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78C996D02C6DAABE00F5B261 /* BMIModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C996D12C6DAABE00F5B261 /* BMIModel.swift in Sources */,
 				78C996BF2C6CDAAE00F5B261 /* ContentView.swift in Sources */,
 				78C996CE2C6D934800F5B261 /* ResultView.swift in Sources */,
 				78C996CC2C6CDB7100F5B261 /* CalculatorView.swift in Sources */,

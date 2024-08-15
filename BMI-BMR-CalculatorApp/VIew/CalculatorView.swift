@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CalculatorView: View {
+  @State var gender: Gender = .female
   @State var height: Double = 150
   @State var age = 18
   @State var weight = 50
@@ -17,7 +18,7 @@ struct CalculatorView: View {
         HStack {
           // MARK: Fe/male
           Button {
-            
+            gender = .male
           } label: {
             VStack {
               Image("male")
@@ -33,7 +34,7 @@ struct CalculatorView: View {
           .clipShape(RoundedRectangle(cornerRadius: 12))
           Spacer()
           Button {
-            
+            gender = .female
           } label: {
             VStack {
               Image("female")
@@ -66,9 +67,7 @@ struct CalculatorView: View {
               .font(.system(size: 20, weight: .medium))
               .padding(.bottom, 5)
           }
-          Slider(value: $height, in: 1...300, step: 1) { editing in
-            
-          }
+          Slider(value: $height, in: 1...300, step: 1)
           .accentColor(Color("MAIN"))
         }
         .padding(24)
@@ -88,7 +87,7 @@ struct CalculatorView: View {
               .padding(.bottom, 10)
             HStack (spacing: 40) {
               Button {
-                
+                weight -= 1
               } label: {
                 Image(systemName: "minus")
                   .resizable()
@@ -99,7 +98,7 @@ struct CalculatorView: View {
                   .clipShape(Circle())
               }
               Button {
-                
+                weight += 1
               } label: {
                 Image(systemName: "plus")
                   .resizable()
@@ -126,7 +125,7 @@ struct CalculatorView: View {
               .padding(.bottom, 10)
             HStack (spacing: 40) {
               Button {
-                
+                age -= 1
               } label: {
                 Image(systemName: "minus")
                   .resizable()
@@ -137,7 +136,7 @@ struct CalculatorView: View {
                   .clipShape(Circle())
               }
               Button {
-                
+                age += 1
               } label: {
                 Image(systemName: "plus")
                   .resizable()
@@ -169,6 +168,11 @@ struct CalculatorView: View {
         }
       }
     }
+}
+
+enum Gender {
+  case male
+  case female
 }
 
 #Preview {
