@@ -20,6 +20,7 @@ struct ContentView: View {
         }
         Spacer()
         CalculatorView()
+        //ResultView()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .background(Color("BGCOLOR"))
