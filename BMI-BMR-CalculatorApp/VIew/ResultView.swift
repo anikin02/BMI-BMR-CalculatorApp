@@ -17,7 +17,7 @@ struct ResultView: View {
           .foregroundStyle(.white)
           .font(.system(size: 40, weight: .bold))
           .frame(maxWidth: .infinity, alignment: .leading)
-          .padding(25)
+          .padding(23)
         
         // Plate of result
         VStack {
@@ -36,7 +36,9 @@ struct ResultView: View {
           Text(infoBMI.description)
             .foregroundStyle(.gray)
             .font(.system(size: 16, weight: .medium))
+            .lineLimit(nil)
             .multilineTextAlignment(.center)
+            .fixedSize(horizontal: false, vertical: true)
           
           Divider()
             .background(.gray)
