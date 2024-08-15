@@ -8,10 +8,10 @@
 import Foundation
 
 struct BMRModel {
-  var height: Double
-  var weight: Double
+  var height: Float
+  var weight: Float
   var gender: Gender
-  var age: Double
+  var age: Float
   
   func getBMR() -> Int {
     switch gender {

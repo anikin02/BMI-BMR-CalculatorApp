@@ -13,6 +13,8 @@ struct CalculatorView: View {
   @State var age = 18
   @State var weight = 50
   
+  @EnvironmentObject var calculatorViewModel: CalculatorViewModel
+  
     var body: some View {
       VStack(spacing: 25) {
         HStack {
@@ -156,7 +158,15 @@ struct CalculatorView: View {
         .padding(.bottom, 25)
         
         Button {
+          calculatorViewModel.bmrModel.age = Float(age)
+          calculatorViewModel.bmrModel.gender = gender
+          calculatorViewModel.bmrModel.height = Float(height)
+          calculatorViewModel.bmrModel.weight = Float(weight)
           
+          calculatorViewModel.bmiModel.height = Float(height)
+          calculatorViewModel.bmiModel.weight = Float(weight)
+          
+          calculatorViewModel.isShowResultView.toggle()
         } label: {
           Text("Calculate")
             .font(.system(size: 32, weight: .black))

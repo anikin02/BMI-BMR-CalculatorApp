@@ -2,12 +2,14 @@
 //  ResultView.swift
 //  BMI-BMR-CalculatorApp
 //
-//  Created by Данил Аникин on 15.08.2024.
+//  Created by anikin02 on 15.08.2024.
 //
 
 import SwiftUI
 
-struct ResultView: View {
+struct ResultView: View {  
+  @EnvironmentObject var calculatorViewModel: CalculatorViewModel
+  
     var body: some View {
       VStack() {
         // Title
@@ -18,24 +20,23 @@ struct ResultView: View {
           .padding(25)
         
         // Plate of result
-        
         VStack {
           // BMI
           Text("Body Mass Index")
             .foregroundStyle(.white)
             .font(.system(size: 20, weight: .black))
             .padding(.bottom, 10)
-          Text("Normal")
-            .foregroundStyle(.green)
+          let infoBMI = calculatorViewModel.bmiModel.getBMIInfo(BMI: Float(calculatorViewModel.bmiModel.getStringBMI()) ?? 0)
+          Text(infoBMI.status)
+            .foregroundStyle(getBMIStatusColor(status: infoBMI.status))
             .font(.system(size: 20, weight: .bold))
-          Text("19.2")
+          Text(calculatorViewModel.bmiModel.getStringBMI())
             .foregroundStyle(.white)
             .font(.system(size: 64, weight: .bold))
-          Text("You Have a Normal Body Weight, Good Job.")
+          Text(infoBMI.description)
             .foregroundStyle(.gray)
             .font(.system(size: 16, weight: .medium))
             .multilineTextAlignment(.center)
-            .padding(.bottom, 10)
           
           Divider()
             .background(.gray)
@@ -46,7 +47,7 @@ struct ResultView: View {
             .font(.system(size: 20, weight: .black))
             .padding(.top, 10)
             .padding(.bottom, 1)
-          Text("1605")
+          Text("\(calculatorViewModel.bmrModel.getBMR())")
             .foregroundStyle(.white)
             .font(.system(size: 64, weight: .bold))
           Text("Calories/day")
@@ -60,7 +61,7 @@ struct ResultView: View {
         .padding(.bottom, 100)
         
         Button {
-          
+          calculatorViewModel.isShowResultView.toggle()
         } label: {
           Text("Re-Calculate")
             .font(.system(size: 32, weight: .black))
@@ -72,6 +73,21 @@ struct ResultView: View {
         }
       }
     }
+  
+  func getBMIStatusColor(status: String) -> Color {
+    switch status {
+    case "Underweight" :
+      return .orange
+    case "Normal" :
+      return .green
+    case "Overweight" :
+      return .orange
+    case "Obese" :
+      return .red
+    default:
+      return .red
+    }
+  }
 
 }
 

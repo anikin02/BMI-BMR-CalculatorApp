@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+  @ObservedObject var calculatorViewModel = CalculatorViewModel()
+  
     var body: some View {
       VStack {
         HStack {
@@ -19,8 +21,14 @@ struct ContentView: View {
             .background(Color("UPBGCOLOR"))
         }
         Spacer()
-        CalculatorView()
-        //ResultView()
+        
+        if calculatorViewModel.isShowResultView {
+          ResultView()
+            .environmentObject(calculatorViewModel)
+        } else {
+          CalculatorView()
+            .environmentObject(calculatorViewModel)
+        }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .background(Color("BGCOLOR"))

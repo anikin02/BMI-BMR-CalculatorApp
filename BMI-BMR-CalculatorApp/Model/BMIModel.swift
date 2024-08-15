@@ -8,15 +8,16 @@
 import Foundation
 
 struct BMIModel {
-  var height: Double
-  var weight: Double
+  var height: Float
+  var weight: Float
   
-  func getBMI() -> Double {
-    let result: Double = weight / (height * height) * 10000
-    return result
+  func getStringBMI() -> String {
+      let bmi = weight / (height * height) * 10000
+      let formattedBMI = String(format: "%.1f", bmi)
+      return formattedBMI
   }
   
-  func getBMIInfo(BMI: Double) -> (status: String, description: String) {
+  func getBMIInfo(BMI: Float) -> (status: String, description: String) {
     switch BMI {
     case ..<18.5 :
       return ("Underweight", "You are under the normal body weight. It may be a good idea to gain some weight.")
