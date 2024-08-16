@@ -14,12 +14,12 @@ BMI/BMR Calculator App is an application developed in Swift using SwiftUI in Xco
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/username/BMI-BMR-Calculator-App.git
+    git clone https://github.com/username/BMI-BMR-CalculatorApp.git
     ```
 2. Open the project in Xcode:
     ```bash
-    cd BMI-BMR-Calculator-App
-    open BMI-BMR-Calculator-App.xcodeproj
+    cd BMI-BMR-CalculatorApp
+    open BMI-BMR-CalculatorApp.xcodeproj
     ```
 3. Run the project on a simulator or a real device.
 
